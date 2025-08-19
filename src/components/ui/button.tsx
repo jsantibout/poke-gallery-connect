@@ -18,11 +18,11 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:scale-105",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        electric: "bg-gradient-electric text-foreground hover:scale-105 shadow-glow font-semibold",
+        electric: "bg-gradient-electric text-primary-foreground hover:scale-105 shadow-glow font-semibold",
         water: "bg-gradient-water text-secondary-foreground hover:scale-105 shadow-card",
         fire: "bg-gradient-fire text-accent-foreground hover:scale-105 shadow-card",
         grass: "bg-gradient-grass text-success-foreground hover:scale-105 shadow-card",
-        psychic: "bg-gradient-psychic text-white hover:scale-105 shadow-card",
+        psychic: "bg-gradient-psychic text-primary-foreground hover:scale-105 shadow-card",
         buy: "bg-gradient-primary text-primary-foreground hover:scale-110 shadow-glow font-bold border-2 border-primary-glow",
       },
       size: {
