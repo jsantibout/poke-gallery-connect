@@ -62,31 +62,31 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-gradient-battle">
       {/* Navigation Header */}
       <header className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-matcha rounded-2xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-electric rounded-2xl flex items-center justify-center">
                 <Zap className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-light text-foreground">PokéCard Collection</h1>
-                <p className="text-sm text-muted-foreground font-light">Connected Art by Teeziro</p>
+                <h1 className="text-2xl font-bold text-foreground drop-shadow-lg">Elite Four Collection</h1>
+                <p className="text-sm text-muted-foreground font-medium">Legendary Art by Teeziro</p>
               </div>
             </div>
             
             <div className="flex items-center gap-4">
-              <Badge variant="outline" className="bg-gradient-warm text-foreground font-light border-primary/20">
+              <Badge variant="outline" className="bg-gradient-purple text-secondary-foreground font-medium border-primary/30">
                 <Star className="w-3 h-3 mr-1" />
-                Teeziro 2024
+                Elite 2024
               </Badge>
               <Button 
-                variant="outline" 
+                variant="electric" 
                 size="sm"
                 onClick={() => setShowSettings(true)}
-                className="font-light"
+                className="font-medium"
               >
                 <Settings className="w-4 h-4" />
                 Setup

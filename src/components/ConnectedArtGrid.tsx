@@ -121,24 +121,24 @@ export const ConnectedArtGrid = ({ onCardPurchase }: ConnectedArtGridProps) => {
           <Sparkles className="w-6 h-6 text-primary animate-float" style={{ animationDelay: '1s' }} />
         </div>
         
-        <h1 className="text-5xl font-light text-foreground mb-4 tracking-tight">
-          Teeziro's Connected Art Cards
+        <h1 className="text-5xl font-bold text-foreground mb-4 tracking-tight drop-shadow-lg">
+          Elite Four Battle Arena
         </h1>
         
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          Discover the stunning 9-card masterpiece drawn by Teeziro that creates a beautiful 
-          connected artwork when displayed together. Each card is a piece of Pokemon art history!
+          Command Teeziro's legendary 9-card battlefield masterpiece! When combined, these cards 
+          reveal the ultimate Elite Four arena. Collect your destiny!
         </p>
 
         <div className="flex items-center justify-center gap-4 mt-6">
           <Button 
-            variant="buy" 
+            variant="battle" 
             size="lg" 
             onClick={handleBuyAll}
             className="text-lg px-8 py-4"
           >
             <ShoppingCart className="w-5 h-5" />
-            Buy Complete Set
+            Claim Battle Arsenal
           </Button>
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
             <Star className="w-4 h-4 fill-primary text-primary" />
@@ -148,11 +148,11 @@ export const ConnectedArtGrid = ({ onCardPurchase }: ConnectedArtGridProps) => {
       </div>
 
       {/* Connected Art Grid */}
-      <Card className="bg-gradient-hero border-2 border-primary/20 shadow-glow">
+      <Card className="bg-gradient-card border-2 border-primary/30 shadow-glow">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl text-card-foreground flex items-center justify-center gap-2">
+          <CardTitle className="text-2xl text-card-foreground flex items-center justify-center gap-2 drop-shadow-lg">
             <Sparkles className="w-6 h-6 text-primary" />
-            Complete Connected Artwork
+            Complete Battle Formation
           </CardTitle>
         </CardHeader>
         <CardContent className="p-8">
@@ -173,15 +173,15 @@ export const ConnectedArtGrid = ({ onCardPurchase }: ConnectedArtGridProps) => {
           
           <div className="mt-8 text-center">
             <p className="text-muted-foreground mb-4">
-              Each card connects seamlessly to create one epic artwork
+              Unite all 9 legendary cards to unleash the complete Elite Four battlefield
             </p>
             <Button 
-              variant="matcha" 
+              variant="electric" 
               size="lg"
               onClick={handleBuyAll}
             >
               <ShoppingCart className="w-5 h-5" />
-              Get All 9 Cards
+              Assemble Elite Arsenal
             </Button>
           </div>
         </CardContent>
