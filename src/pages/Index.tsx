@@ -44,7 +44,7 @@ const Index = () => {
 
   if (showSettings) {
     return (
-      <div className="min-h-screen bg-gradient-hero py-12 px-4">
+      <div className="min-h-screen bg-gradient-town py-12 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
             <Button 
@@ -62,28 +62,28 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-battle">
+    <div className="min-h-screen bg-gradient-nostalgic">
       {/* Navigation Header */}
       <header className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-electric rounded-2xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-ocean rounded-xl flex items-center justify-center">
                 <Zap className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-foreground drop-shadow-lg">Elite Four Collection</h1>
-                <p className="text-sm text-muted-foreground font-medium">Legendary Art by Teeziro</p>
+                <h1 className="text-2xl font-semibold text-foreground">Pallet Town Cards</h1>
+                <p className="text-sm text-muted-foreground">Connected Art by Teeziro</p>
               </div>
             </div>
             
             <div className="flex items-center gap-4">
-              <Badge variant="outline" className="bg-gradient-purple text-secondary-foreground font-medium border-primary/30">
+              <Badge variant="outline" className="bg-gradient-coral text-secondary-foreground font-medium border-primary/20">
                 <Star className="w-3 h-3 mr-1" />
-                Elite 2024
+                Classic 2024
               </Badge>
               <Button 
-                variant="electric" 
+                variant="ocean" 
                 size="sm"
                 onClick={() => setShowSettings(true)}
                 className="font-medium"

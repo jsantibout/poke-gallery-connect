@@ -60,7 +60,7 @@ export const PokemonCard = ({ card, onBuyClick }: PokemonCardProps) => {
           {/* Hover overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center p-4">
             <Button
-              variant="buy"
+              variant="peaceful"
               size="sm"
               onClick={() => onBuyClick(card)}
               className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
@@ -82,7 +82,7 @@ export const PokemonCard = ({ card, onBuyClick }: PokemonCardProps) => {
           
           <div className="flex gap-2">
             <Button
-              variant="electric"
+              variant="ocean"
               size="sm"
               className="flex-1"
               onClick={() => onBuyClick(card)}
