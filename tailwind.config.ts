@@ -99,11 +99,11 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-electric': 'var(--gradient-electric)',
-				'gradient-water': 'var(--gradient-water)',
-				'gradient-fire': 'var(--gradient-fire)',
-				'gradient-grass': 'var(--gradient-grass)',
-				'gradient-psychic': 'var(--gradient-psychic)',
+				'gradient-matcha': 'var(--gradient-matcha)',
+				'gradient-warm': 'var(--gradient-warm)',
+				'gradient-soft': 'var(--gradient-soft)',
+				'gradient-neutral': 'var(--gradient-neutral)',
+				'gradient-accent': 'var(--gradient-accent)',
 				'gradient-hero': 'var(--gradient-hero)'
 			},
 			boxShadow: {

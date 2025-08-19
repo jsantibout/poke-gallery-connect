@@ -115,13 +115,13 @@ export const ConnectedArtGrid = ({ onCardPurchase }: ConnectedArtGridProps) => {
       <div className="text-center space-y-4">
         <div className="flex items-center justify-center gap-2 mb-4">
           <Sparkles className="w-6 h-6 text-primary animate-float" />
-          <Badge variant="outline" className="bg-gradient-electric text-foreground font-semibold px-4 py-2">
+          <Badge variant="outline" className="bg-gradient-warm text-foreground font-light px-4 py-2 border-primary/20">
             2024 Connected Art Series
           </Badge>
           <Sparkles className="w-6 h-6 text-primary animate-float" style={{ animationDelay: '1s' }} />
         </div>
         
-        <h1 className="text-5xl font-bold bg-gradient-electric bg-clip-text text-transparent mb-4">
+        <h1 className="text-5xl font-light text-foreground mb-4 tracking-tight">
           Teeziro's Connected Art Cards
         </h1>
         
@@ -176,7 +176,7 @@ export const ConnectedArtGrid = ({ onCardPurchase }: ConnectedArtGridProps) => {
               Each card connects seamlessly to create one epic artwork
             </p>
             <Button 
-              variant="electric" 
+              variant="matcha" 
               size="lg"
               onClick={handleBuyAll}
             >

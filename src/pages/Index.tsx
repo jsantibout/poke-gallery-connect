@@ -68,17 +68,17 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-electric rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-matcha rounded-2xl flex items-center justify-center">
                 <Zap className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-foreground">PokéCard Showcase</h1>
-                <p className="text-sm text-muted-foreground">Connected Art Collection</p>
+                <h1 className="text-2xl font-light text-foreground">PokéCard Collection</h1>
+                <p className="text-sm text-muted-foreground font-light">Connected Art by Teeziro</p>
               </div>
             </div>
             
             <div className="flex items-center gap-4">
-              <Badge variant="outline" className="bg-gradient-electric text-foreground font-semibold">
+              <Badge variant="outline" className="bg-gradient-warm text-foreground font-light border-primary/20">
                 <Star className="w-3 h-3 mr-1" />
                 Teeziro 2024
               </Badge>
@@ -86,9 +86,10 @@ const Index = () => {
                 variant="outline" 
                 size="sm"
                 onClick={() => setShowSettings(true)}
+                className="font-light"
               >
                 <Settings className="w-4 h-4" />
-                TCGPlayer Setup
+                Setup
               </Button>
             </div>
           </div>

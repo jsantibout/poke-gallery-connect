@@ -82,7 +82,7 @@ export const PokemonCard = ({ card, onBuyClick }: PokemonCardProps) => {
           
           <div className="flex gap-2">
             <Button
-              variant="electric"
+              variant="matcha"
               size="sm"
               className="flex-1"
               onClick={() => onBuyClick(card)}
