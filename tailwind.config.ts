@@ -105,7 +105,8 @@ export default {
 				'gradient-tree': 'var(--gradient-tree)',
 				'gradient-town': 'var(--gradient-town)',
 				'gradient-peaceful': 'var(--gradient-peaceful)',
-				'gradient-nostalgic': 'var(--gradient-nostalgic)'
+				'gradient-nostalgic': 'var(--gradient-nostalgic)',
+				'gradient-water': 'var(--gradient-water)'
 			},
 			boxShadow: {
 				'card': 'var(--shadow-card)',
