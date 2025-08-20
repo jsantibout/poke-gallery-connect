@@ -83,7 +83,7 @@ const Index = () => {
                 Classic 2024
               </Badge>
               <Button 
-                variant="coral" 
+                variant="ocean" 
                 size="sm"
                 onClick={() => setShowSettings(true)}
                 className="font-medium"
