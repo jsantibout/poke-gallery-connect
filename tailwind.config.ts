@@ -99,13 +99,12 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-ocean': 'var(--gradient-ocean)',
-				'gradient-coral': 'var(--gradient-coral)',
-				'gradient-forest': 'var(--gradient-forest)',
-				'gradient-tree': 'var(--gradient-tree)',
-				'gradient-town': 'var(--gradient-town)',
-				'gradient-peaceful': 'var(--gradient-peaceful)',
-				'gradient-nostalgic': 'var(--gradient-nostalgic)'
+				'gradient-matcha': 'var(--gradient-matcha)',
+				'gradient-warm': 'var(--gradient-warm)',
+				'gradient-soft': 'var(--gradient-soft)',
+				'gradient-neutral': 'var(--gradient-neutral)',
+				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-hero': 'var(--gradient-hero)'
 			},
 			boxShadow: {
 				'card': 'var(--shadow-card)',
