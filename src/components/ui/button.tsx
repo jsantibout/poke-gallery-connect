@@ -9,21 +9,21 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 shadow-card",
+        default: "bg-gradient-tree text-primary-foreground hover:bg-primary/90 hover:scale-105 shadow-card",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-gradient-tree text-primary-foreground hover:bg-primary/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border border-input bg-gradient-tree text-primary-foreground hover:bg-primary/90",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:scale-105",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        ocean: "bg-gradient-ocean text-primary-foreground hover:scale-105 shadow-glow font-medium",
-        coral: "bg-gradient-coral text-secondary-foreground hover:scale-105 shadow-glow font-medium",
-        forest: "bg-gradient-forest text-accent-foreground hover:scale-105 shadow-glow font-medium",
-        town: "bg-gradient-town text-foreground hover:scale-105 shadow-card font-medium",
-        peaceful: "bg-gradient-peaceful text-foreground hover:scale-105 shadow-card font-medium border border-primary/20",
-        nostalgic: "bg-gradient-nostalgic text-foreground hover:scale-105 shadow-glow font-bold",
+          "bg-gradient-tree text-primary-foreground hover:bg-primary/90 hover:scale-105",
+        ghost: "bg-gradient-tree text-primary-foreground hover:bg-primary/90",
+        link: "bg-gradient-tree text-primary-foreground underline-offset-4 hover:underline",
+        ocean: "bg-gradient-tree text-primary-foreground hover:scale-105 shadow-glow font-medium",
+        coral: "bg-gradient-tree text-primary-foreground hover:scale-105 shadow-glow font-medium",
+        forest: "bg-gradient-tree text-primary-foreground hover:scale-105 shadow-glow font-medium",
+        town: "bg-gradient-tree text-primary-foreground hover:scale-105 shadow-card font-medium",
+        peaceful: "bg-gradient-tree text-primary-foreground hover:scale-105 shadow-card font-medium border border-primary/20",
+        nostalgic: "bg-gradient-tree text-primary-foreground hover:scale-105 shadow-glow font-bold",
       },
       size: {
         default: "h-10 px-4 py-2",
