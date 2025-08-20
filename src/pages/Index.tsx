@@ -50,7 +50,7 @@ const Index = () => {
                 <Zap className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold text-foreground">Pallet Town Cards</h1>
+                <h1 className="text-2xl font-semibold text-foreground">Puzzle Card Art</h1>
                 <p className="text-sm text-muted-foreground">Connected Art by Teeziro</p>
               </div>
             </div>
@@ -67,7 +67,7 @@ const Index = () => {
 
       {/* Main Content */}
       <main className="py-12 px-4">
-        <ConnectedArtGrid onCardPurchase={handleCardPurchase} />
+        <ConnectedArtGrid onCardPurchase={handleCardPurchase} cards={[]} />
       </main>
 
       {/* Footer */}
@@ -81,11 +81,11 @@ const Index = () => {
               </h3>
               <p className="text-muted-foreground">
                 This unique 9-card series by artist Teeziro creates a stunning connected 
-                artwork when displayed together. Each card is part of Pokemon TCG history.
+                artwork when displayed together.
               </p>
             </div>
             
-            <div>
+            {/* <div>
               <h3 className="font-bold text-lg mb-4">Quick Links</h3>
               <div className="space-y-2">
                 <Button variant="ghost" size="sm" className="justify-start p-0 h-auto">
@@ -101,7 +101,7 @@ const Index = () => {
                   Teeziro's Art
                 </Button>
               </div>
-            </div>
+            </div> */}
             
             <div>
               <h3 className="font-bold text-lg mb-4">Support</h3>
@@ -120,7 +120,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-border/40 mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 PokéCard Showcase. Pokemon TCG cards © Nintendo/Game Freak.</p>
+            <p>&copy; 2025 PokéCard Showcase. Pokemon TCG cards © Nintendo/Game Freak.</p>
           </div>
         </div>
       </footer>

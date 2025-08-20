@@ -1,114 +1,30 @@
+// components/ConnectedArtGrid.tsx (refactor)
 import { PokemonCard } from "./PokemonCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { generateTCGPlayerUrl } from "./TCGPlayerIntegration";
 import { ShoppingCart, Star, Sparkles } from "lucide-react";
 
-interface PokemonCardData {
+export interface PokemonCardData {
   id: number;
   name: string;
-  set: string;
+  set: string;        // map from set_name
   number: string;
-  imageUrl: string;
+  imageUrl: string;   // map from image_url
   tcgplayerUrl: string;
-  position: { row: number; col: number };
+  position: { row: number; col: number }; // map from position_row/col
 }
-
-// Generate cards with affiliate URLs using dummy config
-const connectedArtCards: PokemonCardData[] = [
-  {
-    id: 1,
-    name: "Dudunsparce",
-    set: "Temporal Forces",
-    number: "129",
-    imageUrl: "https://images.pokemontcg.io/sv5/129_hires.png",
-    tcgplayerUrl: generateTCGPlayerUrl("Dudunsparce", "Temporal Forces", "129"),
-    position: { row: 1, col: 1 }
-  },
-  {
-    id: 2,
-    name: "Torkoal",
-    set: "Twilight Masquerade",
-    number: "30",
-    imageUrl: "https://images.pokemontcg.io/sv6/30_hires.png",
-    tcgplayerUrl: generateTCGPlayerUrl("Torkoal", "Twilight Masquerade", "30"),
-    position: { row: 1, col: 2 }
-  },
-  {
-    id: 3,
-    name: "Wattrel",
-    set: "Twilight Masquerade",
-    number: "75",
-    imageUrl: "https://images.pokemontcg.io/sv6/75_hires.png",
-    tcgplayerUrl: generateTCGPlayerUrl("Wattrel", "Twilight Masquerade", "75"),
-    position: { row: 1, col: 3 }
-  },
-  {
-    id: 4,
-    name: "Golbat",
-    set: "Shrouded Fable",
-    number: "28",
-    imageUrl: "https://images.pokemontcg.io/sv6pt5/28_hires.png",
-    tcgplayerUrl: generateTCGPlayerUrl("Golbat", "Shrouded Fable", "28"),
-    position: { row: 2, col: 1 }
-  },
-  {
-    id: 5,
-    name: "Slowpoke",
-    set: "Stellar Crown",
-    number: "57",
-    imageUrl: "https://images.pokemontcg.io/sv7/57_hires.png",
-    tcgplayerUrl: generateTCGPlayerUrl("Slowpoke", "Stellar Crown", "57"),
-    position: { row: 2, col: 2 }
-  },
-  {
-    id: 6,
-    name: "Passimian",
-    set: "Surging Sparks",
-    number: "TBA",
-    imageUrl: "/placeholder-passimian.jpg",
-    tcgplayerUrl: generateTCGPlayerUrl("Passimian", "Surging Sparks", "TBA"),
-    position: { row: 2, col: 3 }
-  },
-  {
-    id: 7,
-    name: "Vibrava",
-    set: "Surging Sparks",
-    number: "TBA",
-    imageUrl: "/placeholder-vibrava.jpg",
-    tcgplayerUrl: generateTCGPlayerUrl("Vibrava", "Surging Sparks", "TBA"),
-    position: { row: 3, col: 1 }
-  },
-  {
-    id: 8,
-    name: "Togetic",
-    set: "Surging Sparks",
-    number: "TBA",
-    imageUrl: "/placeholder-togetic.jpg",
-    tcgplayerUrl: generateTCGPlayerUrl("Togetic", "Surging Sparks", "TBA"),
-    position: { row: 3, col: 2 }
-  },
-  {
-    id: 9,
-    name: "Spheal",
-    set: "Surging Sparks",
-    number: "TBA",
-    imageUrl: "/placeholder-spheal.jpg",
-    tcgplayerUrl: generateTCGPlayerUrl("Spheal", "Surging Sparks", "TBA"),
-    position: { row: 3, col: 3 }
-  }
-];
 
 interface ConnectedArtGridProps {
+  cards: PokemonCardData[];
   onCardPurchase: (card: PokemonCardData) => void;
+  buyAllUrl?: string; // configurable
 }
 
-export const ConnectedArtGrid = ({ onCardPurchase }: ConnectedArtGridProps) => {
+export function ConnectedArtGrid({ cards, onCardPurchase, buyAllUrl }: ConnectedArtGridProps) {
   const handleBuyAll = () => {
-    // Open TCGPlayer with complete collection affiliate link using dummy config
-    const affiliateUrl = generateTCGPlayerUrl("Complete Collection", "Teeziro Connected Art", "2024");
-    window.open(affiliateUrl, '_blank');
+    if (!buyAllUrl) return;
+    window.open(buyAllUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -118,33 +34,29 @@ export const ConnectedArtGrid = ({ onCardPurchase }: ConnectedArtGridProps) => {
         <div className="flex items-center justify-center gap-2 mb-4">
           <Sparkles className="w-6 h-6 text-primary animate-float" />
           <Badge variant="outline" className="bg-gradient-warm text-foreground font-light px-4 py-2 border-primary/20">
-            2024 Connected Art Series
+            2025 Connected Art Series
           </Badge>
-          <Sparkles className="w-6 h-6 text-primary animate-float" style={{ animationDelay: '1s' }} />
+          <Sparkles className="w-6 h-6 text-primary animate-float" style={{ animationDelay: "1s" }} />
         </div>
-        
+
         <h1 className="text-5xl font-semibold text-foreground mb-4 tracking-tight">
-          Pallet Town Card Collection
+          Tezziro Card Collection
         </h1>
-        
+
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          Discover Teeziro's peaceful 9-card masterpiece inspired by the nostalgic charm 
-          of hometown adventures. Each card connects to create a beautiful memory!
+          Discover Teeziro&apos;s peaceful 9-card masterpiece. Each card connects to create one beautiful piece of art!
         </p>
 
         <div className="flex items-center justify-center gap-4 mt-6">
-          <Button 
-            variant="nostalgic" 
-            size="lg" 
-            onClick={handleBuyAll}
-            className="text-lg px-8 py-4"
-          >
-            <ShoppingCart className="w-5 h-5" />
-            Complete Collection
-          </Button>
+          {buyAllUrl && (
+            <Button variant="nostalgic" size="lg" onClick={handleBuyAll} className="text-lg px-8 py-4">
+              <ShoppingCart className="w-5 h-5" />
+              Complete Collection
+            </Button>
+          )}
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
             <Star className="w-4 h-4 fill-primary text-primary" />
-            <span>Collector's Edition</span>
+            <span>Collector&apos;s Edition</span>
           </div>
         </div>
       </div>
@@ -154,37 +66,26 @@ export const ConnectedArtGrid = ({ onCardPurchase }: ConnectedArtGridProps) => {
         <CardHeader className="text-center">
           <CardTitle className="text-2xl text-card-foreground flex items-center justify-center gap-2">
             <Sparkles className="w-6 h-6 text-primary" />
-            Complete Hometown Journey
+            Complete the Masterpiece!
           </CardTitle>
         </CardHeader>
         <CardContent className="p-8">
-          <div 
-            className="grid grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto"
-            style={{
-              aspectRatio: '3/3'
-            }}
-          >
-            {connectedArtCards.map((card) => (
-              <PokemonCard
-                key={card.id}
-                card={card}
-                onBuyClick={onCardPurchase}
-              />
+          <div className="grid grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto" style={{ aspectRatio: "3/3" }}>
+            {cards.map((card) => (
+              <PokemonCard key={card.id} card={card} onBuyClick={onCardPurchase} />
             ))}
           </div>
-          
+
           <div className="mt-8 text-center">
             <p className="text-muted-foreground mb-4">
-              Each card tells a story that connects to create one beautiful hometown memory
+              Each card tells a story that connects to create one beautiful art piece.
             </p>
-            <Button 
-              variant="ocean" 
-              size="lg"
-              onClick={handleBuyAll}
-            >
-              <ShoppingCart className="w-5 h-5" />
-              Start Your Journey
-            </Button>
+            {buyAllUrl && (
+              <Button variant="ocean" size="lg" onClick={handleBuyAll}>
+                <ShoppingCart className="w-5 h-5" />
+                Start Your Journey
+              </Button>
+            )}
           </div>
         </CardContent>
       </Card>
@@ -193,22 +94,16 @@ export const ConnectedArtGrid = ({ onCardPurchase }: ConnectedArtGridProps) => {
       <Card className="bg-card border border-border">
         <CardHeader>
           <CardTitle className="text-xl text-card-foreground">Individual Card Collection</CardTitle>
-          <p className="text-muted-foreground">
-            Browse and purchase individual cards from the connected art series
-          </p>
+          <p className="text-muted-foreground">Browse and purchase individual cards from the connected art series</p>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {connectedArtCards.map((card) => (
-              <PokemonCard
-                key={`individual-${card.id}`}
-                card={card}
-                onBuyClick={onCardPurchase}
-              />
+            {cards.map((card) => (
+              <PokemonCard key={`individual-${card.id}`} card={card} onBuyClick={onCardPurchase} />
             ))}
           </div>
         </CardContent>
       </Card>
     </div>
   );
-};
+}
