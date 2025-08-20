@@ -72,11 +72,11 @@ export const PokemonCard = ({ card, onBuyClick }: PokemonCardProps) => {
         </div>
 
         {/* Card Info */}
-        <div className="p-4 bg-gradient-to-b from-card to-muted">
-          <h3 className="font-bold text-lg text-card-foreground mb-1 text-center">
+        <div className="p-4 bg-gradient-water">
+          <h3 className="font-bold text-lg text-white mb-1 text-center">
             {card.name}
           </h3>
-          <p className="text-sm text-muted-foreground text-center mb-2">
+          <p className="text-sm text-white/80 text-center mb-2">
             {card.set} #{card.number}
           </p>
           

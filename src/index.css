@@ -54,13 +54,14 @@ All colors MUST be HSL.
 
     /* Pallet Town nostalgic gradients */
     --gradient-primary: linear-gradient(135deg, hsl(110 35% 38%), hsl(110 40% 42%));
-    --gradient-ocean: linear-gradient(135deg, hsl(110 35% 38%), hsl(110 40% 42%));
+    --gradient-ocean: linear-gradient(135deg, hsl(200 65% 55%), hsl(200 70% 65%));
     --gradient-coral: linear-gradient(135deg, hsl(110 35% 38%), hsl(110 40% 42%));
     --gradient-forest: linear-gradient(135deg, hsl(110 35% 38%), hsl(110 40% 42%));
     --gradient-tree: linear-gradient(135deg, hsl(110 35% 38%), hsl(110 40% 42%));
     --gradient-town: linear-gradient(135deg, hsl(140 30% 92%), hsl(140 25% 88%));
     --gradient-peaceful: linear-gradient(135deg, hsl(140 20% 96%), hsl(200 30% 90%));
     --gradient-nostalgic: linear-gradient(135deg, hsl(140 30% 92%), hsl(200 40% 85%), hsl(15 60% 80%));
+    --gradient-water: linear-gradient(135deg, hsl(200 65% 55%), hsl(200 70% 65%));
 
     /* Soft pixel-art inspired shadows */
     --shadow-card: 0 4px 15px -3px hsl(200 25% 25% / 0.12);
