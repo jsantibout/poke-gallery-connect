@@ -2,6 +2,7 @@ import { PokemonCard } from "./PokemonCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { generateTCGPlayerUrl } from "./TCGPlayerIntegration";
 import { ShoppingCart, Star, Sparkles } from "lucide-react";
 
 interface PokemonCardData {
@@ -14,6 +15,7 @@ interface PokemonCardData {
   position: { row: number; col: number };
 }
 
+// Generate cards with affiliate URLs using dummy config
 const connectedArtCards: PokemonCardData[] = [
   {
     id: 1,
@@ -21,7 +23,7 @@ const connectedArtCards: PokemonCardData[] = [
     set: "Temporal Forces",
     number: "129",
     imageUrl: "https://images.pokemontcg.io/sv5/129_hires.png",
-    tcgplayerUrl: "https://tcgplayer.pxf.io/dudunsparce-sv5-129",
+    tcgplayerUrl: generateTCGPlayerUrl("Dudunsparce", "Temporal Forces", "129"),
     position: { row: 1, col: 1 }
   },
   {
@@ -30,7 +32,7 @@ const connectedArtCards: PokemonCardData[] = [
     set: "Twilight Masquerade",
     number: "30",
     imageUrl: "https://images.pokemontcg.io/sv6/30_hires.png",
-    tcgplayerUrl: "https://tcgplayer.pxf.io/torkoal-sv6-30",
+    tcgplayerUrl: generateTCGPlayerUrl("Torkoal", "Twilight Masquerade", "30"),
     position: { row: 1, col: 2 }
   },
   {
@@ -39,7 +41,7 @@ const connectedArtCards: PokemonCardData[] = [
     set: "Twilight Masquerade",
     number: "75",
     imageUrl: "https://images.pokemontcg.io/sv6/75_hires.png",
-    tcgplayerUrl: "https://tcgplayer.pxf.io/wattrel-sv6-75",
+    tcgplayerUrl: generateTCGPlayerUrl("Wattrel", "Twilight Masquerade", "75"),
     position: { row: 1, col: 3 }
   },
   {
@@ -48,7 +50,7 @@ const connectedArtCards: PokemonCardData[] = [
     set: "Shrouded Fable",
     number: "28",
     imageUrl: "https://images.pokemontcg.io/sv6pt5/28_hires.png",
-    tcgplayerUrl: "https://tcgplayer.pxf.io/golbat-sv6pt5-28",
+    tcgplayerUrl: generateTCGPlayerUrl("Golbat", "Shrouded Fable", "28"),
     position: { row: 2, col: 1 }
   },
   {
@@ -57,7 +59,7 @@ const connectedArtCards: PokemonCardData[] = [
     set: "Stellar Crown",
     number: "57",
     imageUrl: "https://images.pokemontcg.io/sv7/57_hires.png",
-    tcgplayerUrl: "https://tcgplayer.pxf.io/slowpoke-sv7-57",
+    tcgplayerUrl: generateTCGPlayerUrl("Slowpoke", "Stellar Crown", "57"),
     position: { row: 2, col: 2 }
   },
   {
@@ -66,7 +68,7 @@ const connectedArtCards: PokemonCardData[] = [
     set: "Surging Sparks",
     number: "TBA",
     imageUrl: "/placeholder-passimian.jpg",
-    tcgplayerUrl: "https://tcgplayer.pxf.io/passimian-surging-sparks",
+    tcgplayerUrl: generateTCGPlayerUrl("Passimian", "Surging Sparks", "TBA"),
     position: { row: 2, col: 3 }
   },
   {
@@ -75,7 +77,7 @@ const connectedArtCards: PokemonCardData[] = [
     set: "Surging Sparks",
     number: "TBA",
     imageUrl: "/placeholder-vibrava.jpg",
-    tcgplayerUrl: "https://tcgplayer.pxf.io/vibrava-surging-sparks",
+    tcgplayerUrl: generateTCGPlayerUrl("Vibrava", "Surging Sparks", "TBA"),
     position: { row: 3, col: 1 }
   },
   {
@@ -84,7 +86,7 @@ const connectedArtCards: PokemonCardData[] = [
     set: "Surging Sparks",
     number: "TBA",
     imageUrl: "/placeholder-togetic.jpg",
-    tcgplayerUrl: "https://tcgplayer.pxf.io/togetic-surging-sparks",
+    tcgplayerUrl: generateTCGPlayerUrl("Togetic", "Surging Sparks", "TBA"),
     position: { row: 3, col: 2 }
   },
   {
@@ -93,7 +95,7 @@ const connectedArtCards: PokemonCardData[] = [
     set: "Surging Sparks",
     number: "TBA",
     imageUrl: "/placeholder-spheal.jpg",
-    tcgplayerUrl: "https://tcgplayer.pxf.io/spheal-surging-sparks",
+    tcgplayerUrl: generateTCGPlayerUrl("Spheal", "Surging Sparks", "TBA"),
     position: { row: 3, col: 3 }
   }
 ];
@@ -104,8 +106,8 @@ interface ConnectedArtGridProps {
 
 export const ConnectedArtGrid = ({ onCardPurchase }: ConnectedArtGridProps) => {
   const handleBuyAll = () => {
-    // Open TCGPlayer with all cards in affiliate link
-    const affiliateUrl = "https://tcgplayer.pxf.io/teeziro-connected-art-2024";
+    // Open TCGPlayer with complete collection affiliate link using dummy config
+    const affiliateUrl = generateTCGPlayerUrl("Complete Collection", "Teeziro Connected Art", "2024");
     window.open(affiliateUrl, '_blank');
   };
 

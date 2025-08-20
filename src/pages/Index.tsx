@@ -1,11 +1,9 @@
-import { useState } from 'react';
 import { ConnectedArtGrid } from '@/components/ConnectedArtGrid';
-import { TCGPlayerIntegration } from '@/components/TCGPlayerIntegration';
+import { generateTCGPlayerUrl } from '@/components/TCGPlayerIntegration';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
-  Settings, 
   Sparkles, 
   Star, 
   ExternalLink,
@@ -25,15 +23,14 @@ interface PokemonCardData {
 }
 
 const Index = () => {
-  const [showSettings, setShowSettings] = useState(false);
   const { toast } = useToast();
 
   const handleCardPurchase = (card: PokemonCardData) => {
     // Track purchase click for analytics
     console.log('Card purchase clicked:', card.name);
     
-    // Generate affiliate URL and open
-    const affiliateUrl = card.tcgplayerUrl;
+    // Generate affiliate URL using dummy config and open
+    const affiliateUrl = generateTCGPlayerUrl(card.name, card.set, card.number);
     window.open(affiliateUrl, '_blank');
     
     toast({
@@ -41,25 +38,6 @@ const Index = () => {
       description: `Opening ${card.name} on TCGPlayer marketplace`,
     });
   };
-
-  if (showSettings) {
-    return (
-      <div className="min-h-screen bg-gradient-town py-12 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <Button 
-              variant="outline" 
-              onClick={() => setShowSettings(false)}
-              className="mb-4"
-            >
-              ← Back to Cards
-            </Button>
-          </div>
-          <TCGPlayerIntegration />
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gradient-nostalgic">
@@ -82,15 +60,6 @@ const Index = () => {
                 <Star className="w-3 h-3 mr-1" />
                 Classic 2024
               </Badge>
-              <Button 
-                variant="ocean" 
-                size="sm"
-                onClick={() => setShowSettings(true)}
-                className="font-medium"
-              >
-                <Settings className="w-4 h-4" />
-                Setup
-              </Button>
             </div>
           </div>
         </div>
